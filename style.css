@@ -1,0 +1,48 @@
+fieldset{
+    width: 400px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+select[multiple]{
+    width: 135%;
+}
+
+input[type="color"]{
+    width: 60%;
+}
+
+input[type="file"]{
+    width: 100%;
+    margin-top: 3px;
+}
+
+#rate{
+    width: 15%;
+    text-align: right;
+}
+
+textarea {
+    resize: none;
+}
+
+select {
+    overflow-y: auto;
+}
+
+input:not(#btn), textarea, select{
+    border-radius: 3px;
+}
+
+[readonly]:not(#textval) {
+    background-color: gainsboro;
+    color: gray;
+}
+
+#textval{
+    border:0px solid;
+}
+
+legend{
+    color: slategrey
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Анкета відвідувача</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <form onsubmit="alert('Дякуємо за відгук!')">
+        <fieldset>
+          <legend>Особисті дані</legend>
+            <table>
+                <tr>
+                    <td><label for="username">Ім'я мандрівника</label></td>
+                    <td><label for="email">e-mail мандрівника*</label></td>
+                </tr>
+                <tr>
+                    <td><input type="text" id="username" name="username" autocomplete="off" placeholder="Тарас"></td>
+                    <td><input type="email" id="email" name="email" autocomplete="off" required placeholder="taraszt@gmail.com"></td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Відгук про поїздку</legend>
+              <table>
+                  <tr>
+                      <td><label for="country">Країна візиту</label></td>
+                      <td><label for="city">Місто*</label></td>
+                  </tr>
+                  <tr>
+                      <td><input type="text" id="country" name="country" value="Україна" readonly></td>
+                      <td>
+                        <input list="citylist" id="city" name="city" required placeholder="Житомир" autocomplete="off">
+                        <datalist id="citylist">
+                            <option value="Житомир"></option>
+                            <option value="Київ"></option>
+                            <option value="Львів"></option>
+                        </datalist>
+                      </td>
+                  </tr>
+                  <tr>
+                    <td><label for="rate">Оцінка подорожі</label></td>
+                    <td><input type="number" name="rating" min="0" max="10" value="10" id="rate" oninput="ratingscroll.value = this.value"></td>
+                  </tr>
+                  <tr>
+                    <td>0 <input type="range" name="ratingscroll" step="1" min="0" max="10" value="10" oninput="rating.value = this.value"> 10</td>
+                  </tr>
+                  <tr>
+                    <td><label for="review">Текст відгуку</label></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                        <textarea id="review" oninput="maxchars.value = this.value.length" name="review" maxlength="204" rows="4" cols="50" spellcheck="off" placeholder="Ваш відгук, переваги та недоліки"></textarea>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>К-сть символів: <meter id="maxchars" value="0" max="204"></meter></td>
+                    <td><label for="reviewessay">Відгук у файловому форматі</label><input type="file" id="reviewessay" name="reviewessay" multiple accept=".docx,.doc,.txt,.pdf"></td>
+                  </tr>
+              </table>
+          </fieldset>
+          <fieldset>
+            <legend>Оцінка ресторану</legend>
+              <table>
+                  <tr>
+                      <td><label for="restname">Назва ресторану*</label></td>
+                      <td><label for="arrivaldate">Дата відвідування</label></td>
+                  </tr>
+                  <tr>
+                      <td><input type="text" id="restname" name="restname" required placeholder="Le Grand" pattern="\w{1,}"></td>
+                      <td><input type="date" id="arrivaldate" name="arrivaldate"></td>
+                  </tr>
+                  <tr>
+                    <td><label for="tablecolor">Колір скатертини</label></td>
+                    <td><label for="foodrating">Оцінити обіди</label></td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <input type="color" id="tablecolor" name="tablecolor" value="#00ff00">
+                    </td>
+                    <td>
+                        <select id="foodrating" name="foodrating">
+                            <option value="verygood">Дуже смачні</option>
+                            <option value="good">Смачні</option>
+                            <option value="neutral">Нормальні</option>
+                            <option value="bad">Несмачні</option>
+                            <option value="verybad">Зовсім несмачні</option>
+                          </select>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td colspan="2"><label for="fish">Найсмачніша страва</label></td>
+                  </tr>
+                  <tr>
+                    <td colspan="2">
+                        <select id="fish" name="fish" size="6" multiple>
+                            <optgroup label="Риба">
+                                <option value="losos">Лосось на грилі з лимоном</option>
+                                <option value="zubatka">Зубатка з травами та часником</option>
+                            </optgroup>
+                            <optgroup label="Салати">
+                                <option value="karpat">Карпатська зелень</option>
+                                <option value="oranzh">Запашна оранжерея</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                  </tr>
+              </table>
+          </fieldset>
+          <fieldset>
+            <legend>Відправка даних</legend>
+              <table>
+                  <tr>
+                    <td>
+                        <input id="btn" type="submit" value="Відправити">
+                        <input id="btn" type="reset" value="Очистити">
+                    </td>
+                  </tr>
+                  <tr>
+                    <td><progress id="progress"></td>
+                    <td><input type="text" id="textval" name="textval" value="Очікування відправки..." readonly></td>
+                  </tr>
+              </table>
+          </fieldset>
+      </form>
+</body>
+</html>
