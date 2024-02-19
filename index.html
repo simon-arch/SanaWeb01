@@ -44,14 +44,14 @@
                     <td><input type="number" name="rating" min="0" max="10" value="10" id="rate" oninput="ratingscroll.value = this.value"></td>
                   </tr>
                   <tr>
-                    <td>0 <input type="range" name="ratingscroll" step="1" min="0" max="10" value="10" oninput="rating.value = this.value"> 10</td>
+                    <td>0 <label><input type="range" name="ratingscroll" step="1" min="0" max="10" value="10" oninput="rating.value = this.value"></label> 10</td>
                   </tr>
                   <tr>
                     <td><label for="review">Текст відгуку</label></td>
                   </tr>
                   <tr>
                     <td colspan="2">
-                        <textarea id="review" oninput="maxchars.value = this.value.length" name="review" maxlength="204" rows="4" cols="50" spellcheck="off" placeholder="Ваш відгук, переваги та недоліки"></textarea>
+                        <textarea id="review" oninput="maxchars.value = this.value.length" name="review" maxlength="204" rows="4" cols="50" spellcheck="false" placeholder="Ваш відгук, переваги та недоліки"></textarea>
                     </td>
                   </tr>
                   <tr>
@@ -113,13 +113,13 @@
               <table>
                   <tr>
                     <td>
-                        <input id="btn" type="submit" value="Відправити">
-                        <input id="btn" type="reset" value="Очистити">
+                        <input class="btn" type="submit" value="Відправити">
+                        <input class="btn" type="reset" value="Очистити">
                     </td>
                   </tr>
                   <tr>
-                    <td><progress id="progress"></td>
-                    <td><input type="text" id="textval" name="textval" value="Очікування відправки..." readonly></td>
+                    <td><progress id="progress"></progress></td>
+                    <td><label><input type="text" id="textval" name="textval" value="Очікування відправки..." readonly></label></td>
                   </tr>
               </table>
           </fieldset>

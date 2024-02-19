@@ -30,7 +30,7 @@ select {
     overflow-y: auto;
 }
 
-input:not(#btn), textarea, select{
+input:not(.btn), textarea, select{
     border-radius: 3px;
 }
 
